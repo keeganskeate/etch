@@ -17,17 +17,6 @@ def create_page_context(context, markdown_file=None, options=None):
         context = load_markdown(context, file_path, markdown_file, options)
     return context
 
-# def load_markdown(context, page, options): # TODO: Generalize
-#     """ Load markdown for context given page. """
-#     file_name = f"/static/etch_mobility/docs/{page}.md"
-#     file_path = os.path.dirname(os.path.realpath(__file__))
-#     file_path += file_name
-#     markdown_file = open(file_path, "r")
-#     context["markdown"] = markdown(
-#         markdown_file.read(), extensions=options
-#     )
-#     return context
-
 class HomePageView(TemplateView):
     """ Home page. """
 
@@ -62,17 +51,6 @@ class ContactView(TemplateView):
         return context
 
 
-class DonateView(TemplateView):
-    """ Donate page. """
-
-    template_name = "etch_mobility/donate.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context = create_page_context(context)
-        return context
-
-
 class PrivacyPolicyView(TemplateView):
     """ Privacy Policy page. """
 
@@ -80,7 +58,7 @@ class PrivacyPolicyView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context = create_page_context(context)
+        context = create_page_context(context, markdown_file="privacy_policy")
         return context
 
 
@@ -91,7 +69,7 @@ class TermsOfServiceView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context = create_page_context(context)
+        context = create_page_context(context, markdown_file="terms_of_service")
         return context
 
 

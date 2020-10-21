@@ -149,7 +149,6 @@ docker push gcr.io/${PROJECT_ID}/${APP_ID}
 
 ## 📚 Publishing
 
-
 Publishing is done with one command:
 
 ```shell

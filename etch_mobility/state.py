@@ -93,7 +93,7 @@ footer = {
             "slug": "about",
             "group": "Energy",
             "links": [
-                {"title": "Emissions", "url": "about"},
+                {"title": "Emissions", "url": "about", "hashtag": "emmissions"},
                 {"title": "Water","url": "about"},
                 {"title": "Waste", "url": "about", "path": ""},
                 {"title": "Agriculture", "url": "about", "path": ""},
@@ -128,7 +128,7 @@ footer = {
             "links": [
                 {"title": "Generations", "url": "about"},
                 {"title": "Education", "url": "about", "path": ""},
-                {"title": "Partners", "url": "contact", "path": ""},
+                {"title": "Partners", "url": "about", "path": ""},
                 {"title": "Interconnection", "url": "about", "path": ""},
                 {"title": "Community", "url": "about", "path": ""},
             ],

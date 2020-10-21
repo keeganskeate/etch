@@ -120,6 +120,11 @@ This website has opted for a NoSQL approach for data management with Firebase's 
 
 Style distinguishes one site from another. You are free and encouraged to modify the style to create a site that is uniquely yours. See [style.md](style.md) for a guide on this website's style.
 
+## Email
+
+* [Email Self-Defense](https://emailselfdefense.fsf.org/en/)
+* [GnuPG](https://www.gnupg.org/)
+
 ## Testing and Debugging
 
 You can check for errors with:
