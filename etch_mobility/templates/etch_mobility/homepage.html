@@ -146,11 +146,12 @@
     {% endfor %}
   </div><!-- End of Featturettes -->
 
-  <!-- Call to action. -->
-  <hr class="featurette-divider invisible-divider">
-    <div class="container">
+  <!-- Call to Action -->
+  {% include "etch_mobility/layout/call-to-action.html" %}
+  {% comment %} <hr class="featurette-divider invisible-divider">
+  <div class="container">
     <div
-      class="col px-5 my-5"
+      class="col my-5"
     >
       <h2 class="featurette-heading text-dark mb-3">
         Ready to get started?
@@ -172,6 +173,6 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
 
 {% endblock %}

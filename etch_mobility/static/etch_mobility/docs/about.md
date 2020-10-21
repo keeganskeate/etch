@@ -2,19 +2,71 @@
   About
 </h1>
 
-ETCH is energy, transportation, community, and heritage (ETCH) planning for a sustainable future.
 <img
   src="../public/static/etch_mobility/images/illustrations/brilliant_ideas_shipping.svg"
   width="320"
   class="float-right mx-3"
 />
+
+ETCH is energy, transportation, community, and heritage (ETCH) planning for a sustainable future.
 ETCH can provide you with information to point you in the right direction for learning about energy, transportation, and community projects. The services offered by ETCH are in essence free, regardless of their price, because users are empowered with freedom.
 
 ## Story
 
+ETCH was founded to focus on the energy, transportation, community, and heritage initiatives in Washington State. ETCH connects solutions with communities. ETCH is in it for the long-run, dedicated to involving community residents and members in the communitywide actions to plan a sustainable energy, transportation, and community projects.
+
 ### Energy
 
+A mission of ETCH is to consume fewer resources, including energy, water, and land, produce less waste, and help communities achieve carbon neutrality.
+
+Etch helps by providing:
+
+- Residential energy audits.
+- Retrofit programs.
+- Outreach about benefits of clean and efficient energy technologies.
+
+ETCH has a unique focus on energy efficiency and benefiting low-income residents. Concrete steps that can be taken include:
+
+* Installing LED lighting.
+* Turning off unused lights at night.
+* Building with green materials.
+
+The goal of the ETCH system will:
+
+- Reduce energy consumption.
+- Increase renewable energy.
+- Address fuel sources in building initiatives.
+
+ETCH strives to reduce emmissions across the board in communities with our solutions. ETCH strives to provide emission tracking data.
+
+#### J-Box
+
+Curious about J-Box? [Contact us](/contact) to learn about our suite of energy and transportation efficiency solutions.
+
 ### Transportation
+
+Help build efficient transportation networks, improve the transportation system, and promote the adoption of electric vehicles.
+
+- Public transit options.
+- Commuting modalities.
+- Transportation connections.
+
+#### Rural transit
+
+ETCH promotes 20-minute neighborhoods, smart neighborhoods that consist of a walkable environment that supports living needs. Concrete steps promoted by ETCH include:
+
+1. Reduce idling.
+2. Carpooling.
+
+ETCH aims to demonstrate the savings from adopting efficient transportation mechanisms.
+
+#### Electric Vehicles (EVs) - Mi Ch@rge C@r Sh@re<a id="mi-charge"></a><a id="ev"></a>
+
+A major initiative of ETCH is to promote the use of electric vehicles. Mi Ch@rge puts a lot at your fingertips:
+
+- Free parking of electric vehicles.
+- New construction to include electric vehicle charging.
+- Increase solar panel use to power electric vehicle charging stations.
 
 ### Community
 
@@ -46,26 +98,58 @@ In the long-run, community-driven development will help you:
 * Increase transparency.
 * Promote accountability.
 
+#### Land use
+
+ETCH promotes the use of sustainable packages. We work hard to keep communities free of litter. This initiative will also aid in reducing landfill waste. A mission of ETCH is to help Thurston County achieve no net loss of farmlands, forest lands, or prairie habitats.
+
+#### Forests
+
+Preserve forests and trees in residential areas. Beautiful forests are an integral part of the Pacific North West and ETCH takes pride in preserving Washington's forests and helping trees grow.
+
+#### Health
+
+In 2020, we have found out first-hand the importance of health in our communities. ETCH strongly promotes air quality, access to health care, and a wide range of other health-promoting solutions.
+
+#### Housing
+
+Alleviate problems of cost-burdened households. ETCH advocates for healthy, inclusive, and equitable social environment along with affordable and livable housing. ETCH solutions:
+
+* Assess housing needs.
+* Increase affordable housing stock.
+* Understand residents current and changing rent needs.
+
+ETCH is dedicated to addressing and helping alleviate the homeless housing crisis in Thurston County.
+
+#### Food
+
+ETCH advocates for local food systems to support communities. We believe that local food sources increase a communities' resilience, health, and prosperity.
+
+#### Water
+
+In the Pacific North West, we understand the importance of water quality. ETCH strives to protect community water, including:
+
+- Groundwater.
+- Rivers and streams.
+- The Puget Sound.
+
 ### Heritage
 
-Future generations...
+ETCH incetivizes holistic plans that take into account future generations.
 
-## J-Box
+#### Future generations
 
-Curious about J-Box?
+ETCH is building a model for sustainability and livability that will benefit generations to come.
 
-## Mi Ch@rge C@r Sh@re<a id="mi-charge"></a>
+#### Education
 
-Mi Ch@rge puts a lot at your fingertips.
-
-### EV's <a id="ev"></a>
+ETCH is an avenue for everyone in the Thurston Region to learn about sustainable practices, projects, and solutions.
 
 ## Marketing and Mobility Management
-
-Making complex marketing efforts simple.
 
 <img
   src="../public/static/etch_mobility/images/illustrations/brilliant_ideas_video.svg"
   width="320"
   class="float-right mx-3"
 />
+
+Making complex marketing efforts simple. ETCH is a system of free solutions that you can use to empower your community. ETCH belongs to you so that you can use the ETCH system however that you please. Free solutions let you operate ethically with the stars as the limit. ETCH empowers you with control over the development process, resources, and decision making authority. We believe that the community is the best judge of how their impact on the environment can be improved, so, we have entrusted the resources with you.

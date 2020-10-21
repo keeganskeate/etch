@@ -66,17 +66,36 @@ h1, h2, h3, h4, h5, h6 {
 .markdown h2 {
   margin-top: 3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 .markdown h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  font-weight: 700;
+}
+.markdown h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 .markdown p {
   margin-top: 1.5rem;
   line-height: 1.75;
 }
 .markdown p a {
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+}
+.markdown strong {
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+}
+.markdown ul,
+.markdown ol {
+  margin-top: 1.5rem;
+}
+.markdown li {
   font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
   font-size: 1.25rem;
 }
