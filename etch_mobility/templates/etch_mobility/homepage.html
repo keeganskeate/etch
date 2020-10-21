@@ -1,0 +1,177 @@
+<!-- Home Page -->
+{% extends "etch_mobility/index.html" %}
+
+{% load static %}
+
+<!-- Page title -->
+{% block title %}Welcome | {{ state.author }}{% endblock %}
+
+  <!-- Page styles -->
+{% block page_css %}
+
+{% endblock %}
+
+<!-- Page template -->
+{% block material %}
+
+  <!-- Title -->
+    <!-- Hero
+  ================================================== -->
+  <div class="position-relative overflow-hidden text-center text-lg-left pb-3">
+
+    <!-- Wave -->
+    <div class="wave big">
+      <svg
+        viewBox="0 0 500 150"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M3.58,140.29 C137.89,29.76 225.35,138.31 596.12,-23.51 L500.00,150.00 L-34.23,201.48 Z"
+        ></path>
+      </svg>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="d-flex mt-auto justify-content-center flex-wrap-reverse">
+      <div class="col-lg-5 mb-5 pl-lg-5">
+        <h1 class="display-4 font-weight-normal font-italic">
+          {{ homepage.hero.title }}
+        </h1>
+        <p class="lead font-weight-normal double-line mb-4">
+          {{ homepage.hero.message }}
+        </p>
+        <p class="lead mb-0">
+          <a
+            href="{{ homepage.hero.url }}"
+            class="font-weight-bold"
+          >
+            {{ homepage.hero.action }}
+          </a>
+        </p>
+      </div>
+      <div class="col mb-5">
+        <img
+          src="{% static 'etch_mobility/images/illustrations/brilliant_ideas_connection.svg' %}"
+          width="100%"
+        >
+      </div>
+    </div>
+  </div><!-- End of Hero -->
+  {% comment %} <div class="jumbotron p-0 p-md-5 rounded"
+    style="background-image:url('{% static 'etch_mobility/images/backgrounds/blocks.svg' %}');background-color:transparent;background-size:contain;background-repeat:no-repeat;background-position:top center;"
+  >
+    <div class="col-md-6 p-4 bg-white-dynamic">
+      <h1 class="display-4 font-italic">
+        {{ homepage.hero.title }}
+      </h1>
+      <p class="lead my-3">
+        {{ homepage.hero.message }}
+      </p>
+      <p class="lead mb-0">
+        <a
+          href="{{ homepage.hero.url }}"
+          class="font-weight-bold"
+        >
+          {{ homepage.hero.action }}
+        </a>
+      </p>
+    </div>
+  </div> {% endcomment %}
+
+  <!-- Features
+  ================================================== -->
+  <div class="ground">
+    <div class="container features">
+      <div class="row justify-content-center">
+        {% for feature in homepage.features %}
+          <div class="col-lg-4 col-md-5 mb-3 px-5 pb-5 p-md-4 text-center">
+            <img
+              class="mb-2 mx-auto"
+              src="{% static feature.image %}"
+              height="175"
+            >
+            <h2 class="text-left mt-1">{{ feature.title }}</h2>
+            <p class="h6 text-left double-line">
+              {{ feature.message }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <div class="wave small upside-down" >
+    <svg
+      viewBox="0 0 500 150"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M3.58,140.29 C215.76,-58.05 343.30,228.11 573.55,-70.89 L500.00,150.00 L-34.23,201.48 Z"
+      >
+      </path>
+    </svg>
+  </div>
+
+  <!-- Featurettes
+  ================================================== -->
+  <div class="container marketing features">
+    {% for featurette in homepage.featurettes %}
+      {% if forloop.counter|divisibleby:2 %}
+        <hr class="featurette-divider invisible-divider">
+      {% endif %}
+      <div class="row featurette" style="margin-top:5rem;margin-bottom:5rem;">
+        <div class="col-md-7 {% if forloop.counter|divisibleby:2 %}order-md-2{% endif %}">
+          <h2 class="featurette-heading large-line mt-0">
+            {{ featurette.title }}
+            <span class="text-muted">
+              {{ featurette.subtitle }}
+            </span>
+          </h2>
+          <p class="lead double-line">
+            {{ featurette.message }}
+          </p>
+        </div>
+        <div class="col-md-5 {% if forloop.counter|divisibleby:2 %}order-md-1{% endif %}">
+          <img
+            src="{% static featurette.image %}"
+            width="100%"
+          >
+          <!-- TODO: Attribute: all-free-download.com -->
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:2 %}
+        <hr class="featurette-divider invisible-divider">
+      {% endif %}
+    {% endfor %}
+  </div><!-- End of Featturettes -->
+
+  <!-- Call to action. -->
+  <hr class="featurette-divider invisible-divider">
+    <div class="container">
+    <div
+      class="col px-5 my-5"
+    >
+      <h2 class="featurette-heading text-dark mb-3">
+        Ready to get started?
+      </h2>
+      <div>
+        <a
+          type="button"
+          class="btn btn-primary mb-3"
+          href="{% url 'contact' %}"
+        >
+          Contact us
+        </a>
+        <a
+          type="button"
+          class="btn btn-secondary mb-3"
+          href="{% url 'about' %}"
+        >
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

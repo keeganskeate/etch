@@ -1,0 +1,29 @@
+<!-- About Page -->
+{% extends "etch_mobility/index.html" %}
+
+{% load static %}
+
+{% block material %}
+  <div class="about">
+    <main role="main" class="container py-3 my-3 ">
+      <div class="d-flex mt-auto justify-content-center flex-wrap-reverse">
+        <div class="col-md-8 pb-5 mb-5 markdown">
+          {{ markdown | safe }}
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- About JavaScript -->
+  <script>
+    (function scrollToHashtag () {
+      var hash = window.location.hash.substring(1);
+      var element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView();
+        // {behavior: 'smooth', block: 'start'} // For scrolling
+      }
+    })();
+  </script>
+
+{% endblock %}

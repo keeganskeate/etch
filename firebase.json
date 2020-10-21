@@ -1,0 +1,36 @@
+{
+  "hosting": [
+    {
+      "site": "etch-mobility",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "!/sitemap",
+          "run": {
+            "serviceId": "etch-mobility",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "!/static",
+          "run": {
+            "serviceId": "etch-mobility",
+            "region": "us-central1"
+          }
+        },
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "etch-mobility",
+            "region": "us-central1"
+          }
+        }
+      ]
+    }
+  ]
+}

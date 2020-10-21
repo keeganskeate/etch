@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  {% load static %}
+
+  <!-- Header Template -->
+  <nav class="navbar navbar-expand-lg navbar-light p-3 px-md-4">
+
+    <!-- Title -->
+    <a class="navbar-brand simple-flex" href="{% url 'index' %}">
+      <h5 class="my-0 mr-md-auto font-weight-normal brand-title">
+        {{ state.author }}
+      </h5>
+    </a>
+
+    <!-- Menu Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Options -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        {% for item in header.nav_items %}
+          <li class="nav-item">
+            <a
+              class="nav-link {% if item.slug in request.path %} active{% endif %}"
+              href="{% url item.slug %}{% if item.category %}#{{ item.category }}{% endif %}"
+            >
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+
+        <!-- Action Button for Small Screens -->
+        <li class="nav-item d-lg-none mt-2">
+          <a
+            class="nav-link btn btn-outline-primary px-2"
+            href="{% url header.action.url %}"
+            style="display:unset"
+          >
+            {{ header.action.title }}
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Action Button for large screens -->
+    <a
+      type="button"
+      class="btn btn-outline-primary d-none d-lg-block"
+      href="{% url header.action.url %}"
+    >
+      {{ header.action.title }}
+    </a>
+
+  </nav>
+
+</html>

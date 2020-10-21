@@ -1,0 +1,63 @@
+{% extends "etch_mobility/index.html" %}
+
+{% load static %}
+
+{% block material %}
+
+  <div class="contact container my-4 my-lg-5">
+    <div class="row featurette my-5">
+
+      <!-- Image -->
+      <div class="col-md-5 order-md-1 order-lg-2 mb-5">
+        <img
+          src="{% static 'etch_mobility/images/illustrations/lab_office_cat_tea.svg' %}"
+          width="100%"
+        >
+      </div>
+
+      <!-- Text -->
+      <div class="col-md-7 order-md-2 order-lg-1 pr-lg-5">
+        <h1 class="simple-title my-3">
+          Thank you for your message.
+        </h1>
+        <p>
+          We will get back to you as soon as possible.
+        </p>
+        <a
+          type="button"
+          class="btn btn-outline-primary mt-3"
+          href="{% url 'index' %}"
+        >
+          Home
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  {% comment %} <div class="not-found full-height simple-column align-items-center mb-5 pb-5"
+    style="margin-top:64px;"
+  >
+
+    <div class="simple-card-content simple-column">
+      {% load static %}
+      <img src="{% static 'etch_mobility/images/theme/acorn_original.svg' %}"
+        class="mb-2"
+      >
+      <h1 class="simple-title my-3">
+        Thank you
+      </h1>
+      <p>
+        Thank you for your message.
+      </p>
+      <a
+        type="button"
+        class="btn btn-outline-primary mt-3"
+        href="{% url 'index' %}"
+      >
+        Home
+      </a>
+    </div>
+  </div> {% endcomment %}
+
+{% endblock %}

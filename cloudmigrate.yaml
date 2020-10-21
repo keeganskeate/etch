@@ -1,0 +1,16 @@
+steps:
+- name: "gcr.io/cloud-builders/docker"
+  args: ["build", "-t", "gcr.io/keeganskeate/etch-mobility", "."]
+
+- name: "gcr.io/cloud-builders/docker"
+  args: ["push", "gcr.io/keeganskeate/etch-mobility"]
+
+# - name: "gcr.io/google-appengine/exec-wrapper"
+#   args: ["-i", "gcr.io/keeganskeate/etch-mobility",
+#          "-s", "keeganskeate:us-central1:etch-mobility-sql",
+#          "--", "python", "manage.py", "migrate"]
+
+# - name: "gcr.io/google-appengine/exec-wrapper"
+#   args: ["-i", "gcr.io/keeganskeate/etch-mobility",
+#          "-s", "keeganskeate:us-central1:etch-mobility-sql",
+#          "--", "python", "manage.py", "collectstatic", "--no-input"]

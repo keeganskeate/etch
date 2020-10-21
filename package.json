@@ -1,0 +1,27 @@
+{
+  "name": "etch-mobility",
+  "productName": "Etch Mobility Website",
+  "version": "1.0.0",
+  "license": "GPLv3",
+  "private": false,
+  "description": "The website for ETCH, energy, transportation, community, and heritage (ETCH) planning for a sustainable future.",
+  "author": "Keegan Skeate <keeganskeate@gmail.com>",
+  "build": {
+    "productName": "etch-mobility"
+  },
+  "scripts": {
+    "collectstatic": "python manage.py collectstatic",
+    "lint": "python manage.py check",
+    "dev": "start cmd.exe /k python manage.py runserver && python manage.py livereload",
+    "dev-publish": "firebase deploy --only hosting:dev",
+    "publish": "firebase deploy --only hosting:production"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.5.3",
+    "bootstrap": "^4.5.3",
+    "firebase": "^7.24.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {}
+}

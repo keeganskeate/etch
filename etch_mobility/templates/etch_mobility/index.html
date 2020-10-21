@@ -1,0 +1,19 @@
+<!-- About Page -->
+{% extends "etch_mobility/base.html" %}
+
+{% load static %}
+
+{% block page %}
+
+  <!-- Header -->
+  {% include "etch_mobility/layout/header.html" %}
+
+  <!-- Core Material -->
+  <div id="material">
+    {% block material %}{% endblock %}
+  </div>
+
+  <!-- Footer -->
+  {% include "etch_mobility/layout/footer.html" %}
+
+{% endblock %}
