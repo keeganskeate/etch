@@ -3,7 +3,7 @@
 </h1>
 
 <img
-  src="../public/static/etch_mobility/images/illustrations/brilliant_ideas_shipping.svg"
+  src="../static/etch_mobility/images/illustrations/brilliant_ideas_shipping.svg"
   width="320"
   class="float-right mx-3"
 />
@@ -15,7 +15,7 @@ ETCH can provide you with information to point you in the right direction for le
 
 ETCH was founded to focus on the energy, transportation, community, and heritage initiatives in Washington State. ETCH connects solutions with communities. ETCH is in it for the long-run, dedicated to involving community residents and members in the communitywide actions to plan a sustainable energy, transportation, and community projects.
 
-### Energy
+### Energy<a id="land-use"></a>
 
 A mission of ETCH is to consume fewer resources, including energy, water, and land, produce less waste, and help communities achieve carbon neutrality.
 
@@ -37,7 +37,7 @@ The goal of the ETCH system will:
 - Increase renewable energy.
 - Address fuel sources in building initiatives.
 
-ETCH strives to reduce emmissions across the board in communities with our solutions. ETCH strives to provide emission tracking data.
+ETCH strives to reduce emmissions across the board in communities with our solutions. ETCH strives to provide emission tracking data.<a id="emmissions"></a>
 
 #### J-Box
 
@@ -55,8 +55,8 @@ Help build efficient transportation networks, improve the transportation system,
 
 ETCH promotes 20-minute neighborhoods, smart neighborhoods that consist of a walkable environment that supports living needs. Concrete steps promoted by ETCH include:
 
-1. Reduce idling.
-2. Carpooling.
+1. Reduce idling.<a id="idling"></a>
+2. Carpooling.<a id="carpooling"></a>
 
 ETCH aims to demonstrate the savings from adopting efficient transportation mechanisms.
 
@@ -68,7 +68,7 @@ A major initiative of ETCH is to promote the use of electric vehicles. Mi Ch@rge
 - New construction to include electric vehicle charging.
 - Increase solar panel use to power electric vehicle charging stations.
 
-### Community
+### Community<a id="community"></a><a id="interconnection"></a>
 
 ETCH believes that everyone benefits when they have the freedom to make the best of themselves. Therefore, ETCH is built with **community-driven development**. Community-driven development is a bottom-up, demand-driven approach to the development process. The 5 key principles of community-driven development are:
 
@@ -81,7 +81,7 @@ ETCH believes that everyone benefits when they have the freedom to make the best
 The aim of community-driven development is to improve functionality, accountability, sustainability, security, and transparency. Community-driven development also promotes participation, collaboration, equity, inclusiveness, nondiscrimination, efficiency, and benevolence.
 
 <img
-  src="../public/static/etch_mobility/images/illustrations/brilliant_ideas_dashboard.svg"
+  src="../static/etch_mobility/images/illustrations/brilliant_ideas_dashboard.svg"
   width="320"
   class="float-left mx-3"
 />
@@ -98,7 +98,7 @@ In the long-run, community-driven development will help you:
 * Increase transparency.
 * Promote accountability.
 
-#### Land use
+#### Land use<a id="waste"></a>
 
 ETCH promotes the use of sustainable packages. We work hard to keep communities free of litter. This initiative will also aid in reducing landfill waste. A mission of ETCH is to help Thurston County achieve no net loss of farmlands, forest lands, or prairie habitats.
 
@@ -120,11 +120,11 @@ Alleviate problems of cost-burdened households. ETCH advocates for healthy, incl
 
 ETCH is dedicated to addressing and helping alleviate the homeless housing crisis in Thurston County.
 
-#### Food
+#### Food<a id="agriculture"></a>
 
 ETCH advocates for local food systems to support communities. We believe that local food sources increase a communities' resilience, health, and prosperity.
 
-#### Water
+#### Water<a id="emmissions"></a>
 
 In the Pacific North West, we understand the importance of water quality. ETCH strives to protect community water, including:
 
@@ -132,7 +132,7 @@ In the Pacific North West, we understand the importance of water quality. ETCH s
 - Rivers and streams.
 - The Puget Sound.
 
-### Heritage
+### Heritage<a id="generations"></a>
 
 ETCH incetivizes holistic plans that take into account future generations.
 
@@ -140,14 +140,14 @@ ETCH incetivizes holistic plans that take into account future generations.
 
 ETCH is building a model for sustainability and livability that will benefit generations to come.
 
-#### Education
+#### Education<a id="education"></a>
 
 ETCH is an avenue for everyone in the Thurston Region to learn about sustainable practices, projects, and solutions.
 
 ## Marketing and Mobility Management
 
 <img
-  src="../public/static/etch_mobility/images/illustrations/brilliant_ideas_video.svg"
+  src="../static/etch_mobility/images/illustrations/brilliant_ideas_video.svg"
   width="320"
   class="float-right mx-3"
 />

@@ -26,5 +26,7 @@
 *.pyo
 *.pyd
 README.md
-.admin/tokens
+**/.admin
+**/.vscode
+assets
 etch_mobility/secret_key.py

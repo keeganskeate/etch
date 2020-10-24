@@ -17,18 +17,19 @@ try:
 except ImportError:
     pass
 
-PRODUCTION = False
-
+PRODUCTION = True
+PROJECT_NAME = "etch_mobility"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROOT_URLCONF = "etch_mobility.urls"
-SETTINGS_NAME = "application_settings"
-WSGI_APPLICATION = "etch_mobility.wsgi.application"
+ROOT_URLCONF = PROJECT_NAME + ".urls"
+SETTINGS_NAME = PROJECT_NAME + "_settings"
+WSGI_APPLICATION = PROJECT_NAME + ".wsgi.application"
 
 #------------------------------------------------------------#
 # Apps
 # https://docs.djangoproject.com/en/3.1/ref/applications/
 #------------------------------------------------------------#
 INSTALLED_APPS = [
+    "crispy_forms",
     "livereload",  # Must be before django.contrib.staticfiles
     "django.contrib.admin",
     "django.contrib.auth",
@@ -37,13 +38,17 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+if PRODUCTION:
+    INSTALLED_APPS.remove("livereload")
 
 #------------------------------------------------------------#
 # Middleware
 # https://docs.djangoproject.com/en/3.1/topics/http/middleware/
 #------------------------------------------------------------#
 MIDDLEWARE = [
-    "livereload.middleware.LiveReloadScript",  # Causes django.core.exceptions.ImproperlyConfigured
+    "livereload.middleware.LiveReloadScript",  # May cause django.core.exceptions.ImproperlyConfigured
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -54,6 +59,10 @@ MIDDLEWARE = [
 ]
 MIDDLEWARE_CLASSES = ("livereload.middleware.LiveReloadScript",)
 
+if PRODUCTION:
+    MIDDLEWARE.remove("livereload.middleware.LiveReloadScript")
+    MIDDLEWARE_CLASSES = ()
+
 #------------------------------------------------------------#
 # Templates
 # https://docs.djangoproject.com/en/3.1/ref/templates/language/
@@ -63,7 +72,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(BASE_DIR, "templates"),
-            os.path.join(BASE_DIR, "etch_mobility/templates"),
+            os.path.join(BASE_DIR, PROJECT_NAME + "/templates"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -106,37 +115,40 @@ USE_TZ = True
 #------------------------------------------------------------#
 # Environment variables
 # Pulling django-environ settings file, stored in Secret Manager.
+# Set GOOGLE_APPLICATION_CREDENTIALS enviornment variable first.
+# with the full path to your service account.
+# set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\keega\Documents\github\etch\.admin\tokens\etch-mobility-45bc1277da83.json
 #------------------------------------------------------------#
-try:
-    env_file = os.path.join(BASE_DIR, ".env")
-    if not os.path.isfile(".env"):
-        import google.auth
-        from google.cloud import secretmanager as sm
+# try:
+env_file = os.path.join(BASE_DIR, ".env")
+if not os.path.isfile(".env"):
+    import google.auth
+    from google.cloud import secretmanager as sm
 
-        _, project = google.auth.default()
+    _, project = google.auth.default()
 
-        if project:
-            client = sm.SecretManagerServiceClient()
-            path = client.secret_version_path(project, SETTINGS_NAME, "latest")
-            payload = client.access_secret_version(path).payload.data.decode("UTF-8")
-            with open(env_file, "w") as f:
-                f.write(payload)
-    env = environ.Env()
-    env.read_env(env_file)
-    SECRET_KEY = env("SECRET_KEY")
-    DEBUG = env("DEBUG")
-except:
-    # Default secret key. Highly recommended to setup your own credentials.
-    # https://docs.djangoproject.com/en/3.1/ref/settings/#secret-key
-    # https://stackoverflow.com/questions/4664724/distributing-django-projects-with-unique-secret-keys
-    DEBUG = True
-    try:
-        from .secret_key import SECRET_KEY
-    except ImportError:
-        from utils.utils import generate_secret_key
-        SETTINGS_DIR = os.path.abspath(os.path.dirname(__file__))
-        generate_secret_key(os.path.join(SETTINGS_DIR, 'secret_key.py'))
-        from .secret_key import SECRET_KEY
+    if project:
+        client = sm.SecretManagerServiceClient()
+        path = client.secret_version_path(project, SETTINGS_NAME, "latest")
+        payload = client.access_secret_version(path).payload.data.decode("UTF-8")
+        with open(env_file, "w") as f:
+            f.write(payload)
+env = environ.Env()
+env.read_env(env_file)
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env("DEBUG")
+# except:
+#     # Default secret key. Highly recommended to setup your own credentials.
+#     # https://docs.djangoproject.com/en/3.1/ref/settings/#secret-key
+#     # https://stackoverflow.com/questions/4664724/distributing-django-projects-with-unique-secret-keys
+#     DEBUG = True
+#     try:
+#         from .secret_key import SECRET_KEY
+#     except ImportError:
+#         from utils.utils import generate_secret_key
+#         SETTINGS_DIR = os.path.abspath(os.path.dirname(__file__))
+#         generate_secret_key(os.path.join(SETTINGS_DIR, 'secret_key.py'))
+#         from .secret_key import SECRET_KEY
 
 if PRODUCTION:
     DEBUG = False
@@ -151,11 +163,12 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "etchmobility.com",
     "etch-mobility.web.app",
+    "https://etch-mobility-unt6rd6zia-uc.a.run.app/",
 ]
 
-SECURE_SSL_REDIRECT = True
-if DEBUG:
-    SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = False
+# if DEBUG:
+#     SECURE_SSL_REDIRECT = False
 
 #------------------------------------------------------------#
 # Database
@@ -175,19 +188,21 @@ DATABASES = {
     }
 }
 
+# If using SQL, setup for custom data migration.
+# if PROJECT_NAME not in INSTALLED_APPS:
+#    INSTALLED_APPS += [PROJECT_NAME]
+
 #------------------------------------------------------------#
 # Email
 # https://docs.djangoproject.com/en/3.1/topics/email/
 #------------------------------------------------------------#
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = '587'
-# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS = True
-
-# If using SQL, setup for custom data migration.
-# if 'etch_mobility' not in INSTALLED_APPS:
-#    INSTALLED_APPS += ['etch_mobility']
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
+LIST_OF_EMAIL_RECIPIENTS = [env('EMAIL_HOST_USER'), "michargecommunity@gmail.com"]
 
 #------------------------------------------------------------#
 # Static files (CSS, JavaScript, Images)
@@ -196,7 +211,7 @@ DATABASES = {
 
 # List of directories where Django will also look for static files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "etch_mobility/static"),
+    os.path.join(BASE_DIR, PROJECT_NAME + "/static"),
 )
 
 # The directory from where files are served. (web accessible folder)
@@ -206,8 +221,6 @@ STATIC_ROOT = os.path.abspath(
 
 # The relative path to serve files.
 STATIC_URL = "/static/"
-if DEBUG:
-    STATIC_URL = "/public/static/"
 
 #------------------------------------------------------------#
 # Google Cloud Storage alternative for serving static files

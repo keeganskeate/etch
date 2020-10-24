@@ -1,5 +1,5 @@
 # Ignore Admin Tokens
-.admin/tokens
+.admin/
 etch_mobility/secret_key.py
 
 # Logs

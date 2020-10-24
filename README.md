@@ -13,7 +13,20 @@ Etch Mobility is a modern portfolio website, built on the bleeding edge, to help
 
 > Currently, nonfree software is used in parts of the website. The mission of Etch Mobility is to systematically migrate from any nonfree software to free software.
 
+You can view the published website at <https://etchmobility.com>.
 <!-- FIXME: [TOC] -->
+
+* [Installation](#installation)
+* [Architecture](#architecture)
+* [Development](#development)
+* [Database](#database)
+* [Storage](#storage)
+* [Bugs](#bugs)
+* [Testing](#testing)
+* [Publishing](#publishing)
+* [Helpful resources](#helpful-resources)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## 📖 Installation
 
@@ -53,6 +66,7 @@ git clone https://github.com/keeganskeate/etch.git
 
 ```
 
+
 ## 🏛️ Architecture
 
 Etch Mobility is built with [Python] using the [Django] framework. Etch Mobility runs on [Cloud Run] and is hosted with [Firebase Hosting]. Etch Mobility utilizes [Firebase Authentication], an optional SQL database, a [Firestore] NoSQL database for real-time data management, and [Firebase Storage] for file storage. You are free to swap out components for others. Etch Mobility depends on several other Google Cloud services in the following ways:
@@ -84,9 +98,11 @@ Helpful resources:
   [Futter]: https://flutter.dev/docs
   [Python]: https://www.python.org/
 
+
 ## 🔨 Development
 
 See [`docs/development.md`](docs/development.md) for a complete development guide. Development can happen in many avenues. Principally, clone the repository, begin working on an area, referring to documentation as needed, and commit your changes.
+
 
 ## 📡 Database
 
@@ -104,6 +120,7 @@ python manage.py migrate
 Helpful resources:
 
 * [Django Database API](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
+
 
 ## 📁 Storage
 
@@ -123,9 +140,11 @@ Helpful resources:
 
 * [Serving static files on App Engine](https://cloud.google.com/appengine/docs/standard/python3/serving-static-files)
 
+
 ## 🐞 Bugs
 
 See [`docs/bugs.md`](docs/bugs.md) for a full list of bugs and issues that you may encounter. To report a bug, please email <keeganskeate@gmail.com>.
+
 
 ## ⚗️ Testing
 
@@ -147,6 +166,7 @@ docker push gcr.io/${PROJECT_ID}/${APP_ID}
 
 ```
 
+
 ## 📚 Publishing
 
 Publishing is done with one command:
@@ -156,8 +176,6 @@ Publishing is done with one command:
 npm run publish
 
 ```
-
-> Both the development and production sites will be published with `npm run publish`. Specify `--only hosting:dev` or `--only hosting:production` to target a specific site.
 
 You will need to have Firebase's command line tool installed:
 
@@ -174,6 +192,7 @@ Afterwards, you can login to Firebase in the command line with:
 firebase login
 
 ```
+
 
 ### Build process
 
@@ -207,23 +226,27 @@ firebase deploy --only hosting:production
 
 ```
 
-## 🐕‍🦺 Resources
+See [`docs/publishing.md`](docs/publishing.md) for an in-depth publishing guide.
+
+
+## 🐕‍🦺 Helpful resources
 
 Below is a non-exhaustive list of helpful resources:
 
 * [Django Philosophy](https://docs.djangoproject.com/en/3.1/misc/design-philosophies)
-* [Django on Cloud Run](https://codelabs.developers.google.com/codelabs/cloud-run-django)
+* [**Django on Cloud Run**](https://codelabs.developers.google.com/codelabs/cloud-run-django)
 * [django-livereload](https://github.com/Fantomas42/django-livereload)
-* [django-livereload-server](https://github.com/tjwalch/django-livereload-server)
+* [**django-livereload-server**](https://github.com/tjwalch/django-livereload-server)
 * [Django Browser Sync with Docker](https://stackoverflow.com/questions/49482710/using-browser-sync-with-django-on-docker-compose)
 * [Design Tips](https://dribbble.com/stories/2020/04/22/designing-for-conversions-7-ux-tips-ecommerce?utm_campaign=2020-05-05&utm_medium=email&utm_source=courtside-20200505)
 * [Docker Tips](https://twg.io/blog/things-i-wish-i-knew-about-docker-before-i-started-using-it/)
 * [Firebase Storage in Google Cloud Functions](https://hackersandslackers.com/manage-files-in-google-cloud-storage-with-python/)
 * [How to reload Django?](https://stackoverflow.com/questions/19094720/how-to-automatically-reload-django-when-files-change)
-* [Quickstart for Python in the App Engine Flexible Environment](https://cloud.google.com/appengine/docs/flexible/python/quickstart#windows)
 * [Testing Docker Locally](https://cloud.google.com/run/docs/testing/local)
+* [Quickstart for Python in the App Engine Flexible Environment](https://cloud.google.com/appengine/docs/flexible/python/quickstart#windows)
 * [The Python Runtime for the App Engine Flexible Environment](https://cloud.google.com/appengine/docs/flexible/python/runtime)
 * [VS Code Django Guide](https://code.visualstudio.com/docs/python/tutorial-django)
+
 
 ## 🤝 Contributing
 
@@ -235,6 +258,7 @@ Anyone is welcome to contribute anything. Currently, Etch Mobility would love:
 * More code.
 * More documentation.
 * Ideas.
+
 
 ## 📜 License
 

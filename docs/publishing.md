@@ -8,6 +8,8 @@ npm run publish
 
 ```
 
+However, you will probably want to walk through the build process manually one time before using `npm run publish` to re-deploy when necessary.
+
 > Both the development and production sites will be published with `npm run publish`. Specify `--only hosting:dev` or `--only hosting:production` to target a specific site.
 
 You will need to have Firebase's command line tool installed:
@@ -26,7 +28,7 @@ firebase login
 
 ```
 
-### Build process
+## Build process
 
 The publishing build process contains three steps:
 
@@ -36,17 +38,35 @@ You can build your container image using Cloud Build by running the following co
 
 ```shell
 
-gcloud builds submit --tag gcr.io/${PROJECT_ID}/${APP_ID}
+set PROJECT_ID=etch-mobility
+set APP_ID=etch-mobility
+python manage.py collectstatic --noinput
+gcloud builds submit --tag gcr.io/%PROJECT_ID%/%APP_ID%
 
 ```
+
+> Note that your `APP_ID` must be in snake case.
 
 2. The container image is deployed to Cloud Run.
 
 ```shell
 
-gcloud beta run deploy ${APP_ID} --image gcr.io/${PROJECT_ID}/${APP_ID} --region ${REGION} --allow-unauthenticated --service-account=${GCS_SA}
+set REGION=us-central1
+gcloud run deploy %PROJECT_ID% --image gcr.io/%PROJECT_ID%/%APP_ID% --region %REGION% --allow-unauthenticated --platform managed
 
 ```
+
+> This project uses a fully managed Cloud Run platform. You can look into [Cloud Run for Anthos](https://cloud.google.com/anthos/run) if you desire.
+
+> You can retrieve the service URL with:
+  ```shell
+
+  gcloud run services describe etch-mobility \
+    --platform managed \
+    --region $REGION  \
+    --format "value(status.url)"
+
+  ```
 
 3. Hosting requests are directed to the containerized app.
 
@@ -54,6 +74,44 @@ This step provides access to this containerized app from a [Firebase Hosting](ht
 
 ```shell
 
-firebase deploy --only hosting:production
+firebase deploy --project etch-mobility
 
 ```
+
+> You will need to be logged in with `firebase login`.
+
+> If you are using an SQL database, then you will also need to run:
+  ```shell
+
+  gcloud builds submit --config cloudmigrate.yaml \
+    --substitutions _REGION=$REGION
+
+  ```
+
+
+## Monitoring
+
+You can view logs for your deployment in the Cloud run console at https://console.cloud.google.com/run/detail/us-central1/your-project/logs?project=your-project
+
+
+## Re-Deploying
+
+When you are ready to re-deploy, simple run:
+
+```shell
+
+npm run publish
+
+```
+
+
+## (Optional) Setup a Custom Domain
+
+You can register a domain with [Google Domains](https://domains.google.com/registrar/). You can then add a custom domain in the Firebase Hosting console.
+
+> If you are using Google Domains, then use '@' for your root domain name and 'www' or 'www.domain.com' for your subdomains when registering your DNS A records.
+
+
+## Takeaways
+
+You now have a simple, yet complex, website running on Cloud Run, which will automatically scale to handle your website's traffic, optimizing CPU and memory so that your website runs with the smallest footprint possible, saving you money. If you desire, you can now seamlessly integrate services such as Cloud Storage into you Django website. You can now plug and play and tinker to your heart's content while your user's enjoy your beautiful material!

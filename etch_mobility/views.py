@@ -1,11 +1,13 @@
 import os
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
+from django.conf import settings
+# from django.core.mail import send_mail
 from markdown import markdown
 
-from . import forms
+from .forms import ContactForm
 from . import state # Save text in Firestore?
-from utils.markdown_utils import load_markdown
+from utils.utils import load_markdown
 
 def create_page_context(context, markdown_file=None, options=None):
     """ Create context for a normal page. """
@@ -20,7 +22,7 @@ def create_page_context(context, markdown_file=None, options=None):
 class HomePageView(TemplateView):
     """ Home page. """
 
-    template_name = "etch_mobility/homepage.html"
+    template_name = settings.PROJECT_NAME + "/homepage.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -32,7 +34,7 @@ class HomePageView(TemplateView):
 class AboutView(TemplateView):
     """ About page. """
 
-    template_name = "etch_mobility/about.html"
+    template_name = settings.PROJECT_NAME + "/about.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -40,21 +42,27 @@ class AboutView(TemplateView):
         return context
 
 
-class ContactView(TemplateView):
-    """ Terms of Service page. """
+class ContactView(FormView):
+    """ Contact page. """
 
-    template_name = "etch_mobility/contact.html"
+    form_class = ContactForm
+    template_name = settings.PROJECT_NAME + "/contact.html"
+    success_url = '/thank-you/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context = create_page_context(context)
         return context
 
+    def form_valid(self, form):
+        form.send_email()
+        return super(ContactView, self).form_valid(form) 
+
 
 class PrivacyPolicyView(TemplateView):
     """ Privacy Policy page. """
 
-    template_name = "etch_mobility/privacy-policy.html"
+    template_name = settings.PROJECT_NAME + "/privacy-policy.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,7 +73,7 @@ class PrivacyPolicyView(TemplateView):
 class TermsOfServiceView(TemplateView):
     """ Terms of Service page. """
 
-    template_name = "etch_mobility/terms-of-service.html"
+    template_name = settings.PROJECT_NAME + "/terms-of-service.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -76,7 +84,7 @@ class TermsOfServiceView(TemplateView):
 class ThankYouView(TemplateView):
     """ Thank you page. """
 
-    template_name = "etch_mobility/thank-you.html"
+    template_name = settings.PROJECT_NAME + "/thank-you.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

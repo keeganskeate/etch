@@ -4,6 +4,7 @@ This website works right out of the box, however, it is recommended to setup you
 
 <!-- [TOC] -->
 
+
 ## Getting Started
 
 First things first, clone the repository.
@@ -46,7 +47,29 @@ Second, store the configurations as a secret.
 
 2. Set project: `gcloud config set project etch-mobility`
 
-3. Set the following environment variables:
+3. Set the following environment variables in the Google Cloud Shell, or optionally in the Google Cloud SDK or with the command line, noting that syntax will vary.
+
+If you haven't already, then you can create a secret* if you haven't already with:
+
+```shell
+
+gcloud secrets create etch_mobility_settings --replication-policy automatic
+
+```
+
+and allow Cloud Run access to access this secret:
+
+```shell
+
+export PROJECTNUM=$(gcloud projects describe ${PROJECT_ID} --format 'value(projectNumber)')
+export CLOUDRUN=${PROJECTNUM}-compute@developer.gserviceaccount.com
+
+gcloud secrets add-iam-policy-binding etch_mobility_settings \
+  --member serviceAccount:${CLOUDRUN} --role roles/secretmanager.secretAccessor
+
+```
+
+Then run the following in the Google Cloud Shell:
 
 ```shell
 PROJECT_ID=etch-mobility
@@ -57,31 +80,44 @@ echo DATABASE_URL=\"postgres://djuser:${DJPASS}@//cloudsql/${PROJECT_ID}:${REGIO
 echo GS_BUCKET_NAME=\"${GS_BUCKET_NAME}\" >> .env
 echo SECRET_KEY=\"$(cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1)\" >> .env
 echo DEBUG=\"True\" >> .env
-gcloud secrets versions add application_settings --data-file .env
+echo EMAIL_HOST_USER=\"youremail@gmail.com\" >> .env
+echo EMAIL_HOST_PASSWORD=\"your-app-password\" >> .env
+gcloud secrets versions add etch_mobility_settings --project ${PROJECT_ID} --data-file .env
 rm .env
 
 ```
 
-You can create a secret if you haven't already with:
+> Set `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD` with your Gmail email and [an app password](https://dev.to/abderrahmanemustapha/how-to-send-email-with-django-and-gmail-in-production-the-right-way-24ab). If you do not plan to use Django's email interface, then you exclude `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD`.
+
+> * You will need to setup billing for Google services at this point if you haven't already.
+
+You can allow Cloud Run access to access this secret with:
 
 ```shell
 
-gcloud secrets create application_settings --replication-policy automatic
+set GCS_SA==<path-to-your-service-account>
+
+gcloud secrets add-iam-policy-binding etch_mobility_settings --member serviceAccount:${GCS_SA} --role roles/secretmanager.secretAccessor
 
 ```
 
 You can confirm the secret was created or updated with:
 
 ```
-gcloud secrets versions list application_settings
+gcloud secrets versions list etch_mobility_settings
 
 ```
 
-Finally, you can [create a Google Cloud service account](https://cloud.google.com/docs/authentication/getting-started) and set the `GOOGLE_APPLICATION_CREDENTIALS` environmental variable to the full path to your credentials.
+*(Optional)* you can [create a Google Cloud service account](https://cloud.google.com/docs/authentication/getting-started) and set the `GOOGLE_APPLICATION_CREDENTIALS` environmental variable to the full path to your credentials.
 
-When you are finished, you should have a `.env` file stored in your root directory and a Gcloud service account and a Firebase service account stored in `admin/tokens`.
+When you are finished, you should have a `.env` file stored in your root directory. You can optionally store a Gcloud service account and/or a Firebase service account stored in `admin/tokens` if you need any Google Cloud or Firebase utilities.
 
 > Keep your `.env` file and service accounts safe and do not upload them to a public repository.
+
+Helpful resources:
+
+* [Generating Django Secret Keys](https://stackoverflow.com/questions/4664724/distributing-django-projects-with-unique-secret-keys)
+
 
 ## Python
 
@@ -104,6 +140,7 @@ You may also need to install other project and development dependencies, includi
 * [Psycopg2](https://www.psycopg.org/install/): `pip install psycopg2`
 * [Python Decouple](https://pypi.org/project/python-decouple/): `pip install python-decouple`
 
+
 ## Node.js
 
 This website utilizes Node.js for web development. You can[download Node.js](https://nodejs.org/en/download/) and install Node.js dependencies in the command prompt:
@@ -114,9 +151,11 @@ npm install
 
 ```
 
+
 ## Wrap-Up
 
 Great! You now have this website installed and are ready to start [developing](development.md). Make sure to document any bugs and your development process if you want to [contribute](contributing.md) to the project.
+
 
 ## Resources
 

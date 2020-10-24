@@ -7,11 +7,13 @@ dj_static
 django==3.0.7
 django-environ==0.4.5
 django-storages[google]==1.9.1
+django-crispy-forms
+django-livereload-server
 firebase_admin==4.3.0
 google-auth==1.20.1
 google-cloud-secret-manager==1.0.0
 gunicorn==20.0.4
-livereload==2.6.3
+# livereload==2.6.3
 Markdown==3.2.2
 markdown-markup-emoji==0.2.2 # FIXME: Not working
 python-decouple==3.3

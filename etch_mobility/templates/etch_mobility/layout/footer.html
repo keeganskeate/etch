@@ -2,8 +2,6 @@
 <html>
   {% load static %}
 
-  <!-- Footer Template -->
-
   <!-- Wave -->
   <div class="wave small blue" >
     <svg viewBox="0 0 500 150" preserveAspectRatio="none">
@@ -11,7 +9,7 @@
     </svg>
   </div>
 
-    <!-- Back to the top -->
+  <!-- Back to the top button -->
   <a
     href="#"
     class="font-weight-light text-secondary-on-light light-green-hover mr-3"
@@ -53,7 +51,7 @@
           </div>
         </div>
 
-        <!-- Footer Index -->
+        <!-- Index -->
         {% for group in footer.index %}
           <div class="col mx-6 mx-md-3 no-grow">
             <h6 class="footer-header text-light font-weight-bold mb-3">
@@ -72,7 +70,7 @@
                 {% elif item.hashtag %}
                   <a
                     class="text-light font-weight-light light-green-hover"
-                    href="{{ item.url }}#{{ item.hashtag }}"
+                    href="{% url item.url %}#{{ item.hashtag }}"
                   >
                     {{ item.title }}
                   </a>
@@ -93,7 +91,7 @@
       </div>
     </div>
 
-    <!-- Copyright -->
+    <!-- Copyright --><!-- TODO: Pass text, links, etc. from state -->
     <div class="container text-secondary-on-light px-5">
       <p class="h6 font-weight-light mt-5">
         <small>
@@ -151,7 +149,14 @@
 
       <!-- Made with Django-->
       <p>
-        <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif" border="0" alt="Made with Django." title="Made with Django." /></a>
+        <a href="http://www.djangoproject.com/">
+          <img
+            src="https://www.djangoproject.com/m/img/badges/djangomade124x25.gif"
+            border="0"
+            alt="Made with Django."
+            title="Made with Django."
+          />
+        </a>
       </p>
 
     </div>

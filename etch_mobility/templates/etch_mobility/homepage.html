@@ -6,17 +6,10 @@
 <!-- Page title -->
 {% block title %}Welcome | {{ state.author }}{% endblock %}
 
-  <!-- Page styles -->
-{% block page_css %}
-
-{% endblock %}
-
 <!-- Page template -->
 {% block material %}
 
-  <!-- Title -->
-    <!-- Hero
-  ================================================== -->
+  <!-- Hero -->
   <div class="position-relative overflow-hidden text-center text-lg-left pb-3">
 
     <!-- Wave -->
@@ -57,29 +50,8 @@
       </div>
     </div>
   </div><!-- End of Hero -->
-  {% comment %} <div class="jumbotron p-0 p-md-5 rounded"
-    style="background-image:url('{% static 'etch_mobility/images/backgrounds/blocks.svg' %}');background-color:transparent;background-size:contain;background-repeat:no-repeat;background-position:top center;"
-  >
-    <div class="col-md-6 p-4 bg-white-dynamic">
-      <h1 class="display-4 font-italic">
-        {{ homepage.hero.title }}
-      </h1>
-      <p class="lead my-3">
-        {{ homepage.hero.message }}
-      </p>
-      <p class="lead mb-0">
-        <a
-          href="{{ homepage.hero.url }}"
-          class="font-weight-bold"
-        >
-          {{ homepage.hero.action }}
-        </a>
-      </p>
-    </div>
-  </div> {% endcomment %}
 
-  <!-- Features
-  ================================================== -->
+  <!-- Features -->
   <div class="ground">
     <div class="container features">
       <div class="row justify-content-center">
@@ -98,7 +70,7 @@
         {% endfor %}
       </div>
     </div>
-  </div>
+  </div><!-- End of Features -->
 
   <!-- Wave -->
   <div class="wave small upside-down" >
@@ -113,8 +85,7 @@
     </svg>
   </div>
 
-  <!-- Featurettes
-  ================================================== -->
+  <!-- Featurettes -->
   <div class="container marketing features">
     {% for featurette in homepage.featurettes %}
       {% if forloop.counter|divisibleby:2 %}
@@ -137,7 +108,6 @@
             src="{% static featurette.image %}"
             width="100%"
           >
-          <!-- TODO: Attribute: all-free-download.com -->
         </div>
       </div>
       {% if forloop.counter|divisibleby:2 %}
@@ -148,31 +118,5 @@
 
   <!-- Call to Action -->
   {% include "etch_mobility/layout/call-to-action.html" %}
-  {% comment %} <hr class="featurette-divider invisible-divider">
-  <div class="container">
-    <div
-      class="col my-5"
-    >
-      <h2 class="featurette-heading text-dark mb-3">
-        Ready to get started?
-      </h2>
-      <div>
-        <a
-          type="button"
-          class="btn btn-primary mb-3"
-          href="{% url 'contact' %}"
-        >
-          Contact us
-        </a>
-        <a
-          type="button"
-          class="btn btn-secondary mb-3"
-          href="{% url 'about' %}"
-        >
-          Learn more
-        </a>
-      </div>
-    </div>
-  </div> {% endcomment %}
 
 {% endblock %}

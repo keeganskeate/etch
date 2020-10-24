@@ -2,6 +2,9 @@
 
 {% load static %}
 
+<!-- Title -->
+{% block title %}Thank you | {{ state.author }}{% endblock %}
+
 {% block material %}
 
   <div class="contact container my-4 my-lg-5">
@@ -25,7 +28,7 @@
         </p>
         <a
           type="button"
-          class="btn btn-outline-primary mt-3"
+          class="font-weight-bold mt-3"
           href="{% url 'index' %}"
         >
           Home
@@ -34,30 +37,4 @@
 
     </div>
   </div>
-
-  {% comment %} <div class="not-found full-height simple-column align-items-center mb-5 pb-5"
-    style="margin-top:64px;"
-  >
-
-    <div class="simple-card-content simple-column">
-      {% load static %}
-      <img src="{% static 'etch_mobility/images/theme/acorn_original.svg' %}"
-        class="mb-2"
-      >
-      <h1 class="simple-title my-3">
-        Thank you
-      </h1>
-      <p>
-        Thank you for your message.
-      </p>
-      <a
-        type="button"
-        class="btn btn-outline-primary mt-3"
-        href="{% url 'index' %}"
-      >
-        Home
-      </a>
-    </div>
-  </div> {% endcomment %}
-
 {% endblock %}

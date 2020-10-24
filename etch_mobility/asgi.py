@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "etch_mobility.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings.PROJECT_NAME "etch_mobility.settings")
 
 application = get_asgi_application()
