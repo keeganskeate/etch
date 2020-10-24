@@ -10,8 +10,6 @@ npm run publish
 
 However, you will probably want to walk through the build process manually one time before using `npm run publish` to re-deploy when necessary.
 
-> Both the development and production sites will be published with `npm run publish`. Specify `--only hosting:dev` or `--only hosting:production` to target a specific site.
-
 You will need to have Firebase's command line tool installed:
 
 ```shell

@@ -2,10 +2,16 @@
 
 This website works right out of the box, however, it is recommended to setup your own credentials for deploying to production. This website uses Firebase by default for many back-end services. As you are free to modify anything, you are welcome to modify this website to use the back-end services of your choice.
 
-<!-- [TOC] -->
+* [Getting started](#getting-started)
+* [Credentials](#credentials)
+  - [Creating environment variables](#creating-environment-variables)
+* [Python](#python)
+* [Node.js](#node-js)
+* [Wrap-up](#wrap-up)
+* [Helpful resources](#helpful-resources)
 
 
-## Getting Started
+## Getting Started<a name="getting-started"></a>
 
 First things first, clone the repository.
 
@@ -16,12 +22,12 @@ git clone https://github.com/keeganskeate/etch.git
 
 ```
 
-## Credentials
+## Credentials<a name="credentials"></a>
 
 If you want to utilize the default backing services, then you will need a [Gmail or G Suite account](https://accounts.google.com/SignUp). The following documentation will assume that you are managing your own account.
 
 
-### Creating Environmental Variables
+### Creating Environmental Variables<a name="creating-environment-variables"></a>
 
 Once you have an account, download the [Cloud SDK installer](https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe) and run:
 
@@ -119,11 +125,9 @@ Helpful resources:
 * [Generating Django Secret Keys](https://stackoverflow.com/questions/4664724/distributing-django-projects-with-unique-secret-keys)
 
 
-## Python
+## Python<a name="python"></a>
 
-This website leverages the power of Python. The recommended way to install Python is with [Anaconda](). Anaconda Python is a self-contained Python environment that is particularly useful for scientific applications. 
-
-If you don’t already have it, then you can start by installing [Miniconda](https://docs.conda.io/en/latest/miniconda.html), which includes a complete Python distribution and the conda package manager." This website is built with Python 3.
+This website leverages the power of Python. The recommended way to install Python is with [Anaconda](https://www.anaconda.com/products/individual/get-started-commercial-edition-1). Anaconda Python is a self-contained Python environment that is particularly useful for scientific applications.
 
 After you have installed a [distribution of Python](https://docs.conda.io/en/latest/miniconda.html), open the Anaconda Prompt, navigate to this website's repository, and install Python dependencies:
 
@@ -141,7 +145,7 @@ You may also need to install other project and development dependencies, includi
 * [Python Decouple](https://pypi.org/project/python-decouple/): `pip install python-decouple`
 
 
-## Node.js
+## Node.js<a name="node-js"></a>
 
 This website utilizes Node.js for web development. You can[download Node.js](https://nodejs.org/en/download/) and install Node.js dependencies in the command prompt:
 
@@ -152,12 +156,12 @@ npm install
 ```
 
 
-## Wrap-Up
+## Wrap-Up<a name="wrap-up"></a>
 
 Great! You now have this website installed and are ready to start [developing](development.md). Make sure to document any bugs and your development process if you want to [contribute](contributing.md) to the project.
 
 
-## Resources
+## Helpful resources<a name="helpful-resources"></a>
 
 * [Django on Cloud Run](https://codelabs.developers.google.com/codelabs/cloud-run-django/index.html)
 

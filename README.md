@@ -1,6 +1,6 @@
 # ETCH
 
-<h1 align="center"><img align="center" height="300" alt="ETCH Mobility" src="https://etchmobility.com/static/etch_mobility/images/logos/etch_mobility_logo.png"></h1>
+<h1 align="center"><img align="center" height="300" alt="ETCH Mobility" src="https://etchmobility.com/static/etch_mobility/images/logos/etch_mobility_logo_2.svg"></h1>
 
 *Energy, transportation, community, and heritage (ETCH) for a sustainable future*.
 
@@ -29,6 +29,14 @@ You can view the published website at <https://etchmobility.com>.
 * [Helpful resources](#helpful-resources)
 * [Contributing](#contributing)
 * [License](#license)
+
+TODO:
+
+* Create a favicon.
+* Explore Github triggers.
+
+<https://cloud.google.com/cloud-build/docs/automating-builds/create-github-app-triggers>
+<https://cloud.google.com/cloud-build/docs/automating-builds/run-builds-on-github>
 
 ## 📖 Installation<a name="installation"></a>
 

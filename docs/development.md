@@ -156,7 +156,7 @@ gcloud secrets versions add etch_mobility_settings --data-file .env
 
 ## Forms
 
-Django makes creating 
+Django makes creating stock forms easy.
 
 * [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html)
 * [How to use Bootstrap 4 Forms with Django](https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html)

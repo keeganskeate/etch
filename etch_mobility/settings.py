@@ -119,36 +119,36 @@ USE_TZ = True
 # with the full path to your service account.
 # set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\keega\Documents\github\etch\.admin\tokens\etch-mobility-45bc1277da83.json
 #------------------------------------------------------------#
-# try:
-env_file = os.path.join(BASE_DIR, ".env")
-if not os.path.isfile(".env"):
-    import google.auth
-    from google.cloud import secretmanager as sm
+try:
+    env_file = os.path.join(BASE_DIR, ".env")
+    if not os.path.isfile(".env"):
+        import google.auth
+        from google.cloud import secretmanager as sm
 
-    _, project = google.auth.default()
+        _, project = google.auth.default()
 
-    if project:
-        client = sm.SecretManagerServiceClient()
-        path = client.secret_version_path(project, SETTINGS_NAME, "latest")
-        payload = client.access_secret_version(path).payload.data.decode("UTF-8")
-        with open(env_file, "w") as f:
-            f.write(payload)
-env = environ.Env()
-env.read_env(env_file)
-SECRET_KEY = env("SECRET_KEY")
-DEBUG = env("DEBUG")
-# except:
-#     # Default secret key. Highly recommended to setup your own credentials.
-#     # https://docs.djangoproject.com/en/3.1/ref/settings/#secret-key
-#     # https://stackoverflow.com/questions/4664724/distributing-django-projects-with-unique-secret-keys
-#     DEBUG = True
-#     try:
-#         from .secret_key import SECRET_KEY
-#     except ImportError:
-#         from utils.utils import generate_secret_key
-#         SETTINGS_DIR = os.path.abspath(os.path.dirname(__file__))
-#         generate_secret_key(os.path.join(SETTINGS_DIR, 'secret_key.py'))
-#         from .secret_key import SECRET_KEY
+        if project:
+            client = sm.SecretManagerServiceClient()
+            path = client.secret_version_path(project, SETTINGS_NAME, "latest")
+            payload = client.access_secret_version(path).payload.data.decode("UTF-8")
+            with open(env_file, "w") as f:
+                f.write(payload)
+    env = environ.Env()
+    env.read_env(env_file)
+    SECRET_KEY = env("SECRET_KEY")
+    DEBUG = env("DEBUG")
+except:
+    # Default secret key. Highly recommended to setup your own credentials.
+    # https://docs.djangoproject.com/en/3.1/ref/settings/#secret-key
+    # https://stackoverflow.com/questions/4664724/distributing-django-projects-with-unique-secret-keys
+    DEBUG = True
+    try:
+        from .secret_key import SECRET_KEY
+    except ImportError:
+        from utils.utils import generate_secret_key
+        SETTINGS_DIR = os.path.abspath(os.path.dirname(__file__))
+        generate_secret_key(os.path.join(SETTINGS_DIR, 'secret_key.py'))
+        from .secret_key import SECRET_KEY
 
 if PRODUCTION:
     DEBUG = False

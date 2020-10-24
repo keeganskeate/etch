@@ -28,7 +28,27 @@
         <!-- Logo -->
         <div class="col mx-6 mx-md-3 mb-3 no-grow">
           <div class="d-flex simple-column align-items-start flex-wrap">
-            <a class="navbar-brand simple-flex py-0" href="{% url 'index' %}">
+            {% comment %} <img
+              src="{% static 'etch_mobility/images/logos/etch_mobility_logo_2.svg' %}"
+              style="height:3rem; transform: translateY(-16px);"
+              class="d-flex d-md-none"
+            >
+            <img
+              src="{% static 'etch_mobility/images/logos/etch_mobility_logo_2.svg' %}"
+              style="height:3rem; transform: translateY(-16px);"
+              class="d-none d-md-flex"
+            > {% endcomment %}
+            <a
+              class="navbar-brand simple-flex py-0"
+              href="{% url 'index' %}"
+              style="align-items:flex-start"
+            >
+              <img
+                src="{% static 'etch_mobility/images/logos/etch_mobility_logo_2.svg' %}"
+                class="mr-2"
+                height="75"
+                style="transform: translateY(-45px);"
+              >
               <h3
                 class="footer-header brand-font text-white"
                 role="button"

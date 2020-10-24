@@ -3,7 +3,6 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
 from django.conf import settings
 # from django.core.mail import send_mail
-from markdown import markdown
 
 from .forms import ContactForm
 from . import state # Save text in Firestore?
