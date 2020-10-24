@@ -1,19 +1,19 @@
 # ETCH
 
-<h1 style="text-align:center"><img style="text-align:center" height="300" alt="ETCH Mobility" src="https://etchmobility.com/static/etch_mobility/images/logos/etch_mobility_logo.png"></h1>
+<h1 align="center"><img align="center" height="300" alt="ETCH Mobility" src="https://etchmobility.com/static/etch_mobility/images/logos/etch_mobility_logo.png"></h1>
 
-*Energy, transportation, community, and heritage (ETCH) planning for a sustainable future*.
+*Energy, transportation, community, and heritage (ETCH) for a sustainable future*.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Etch Mobility is a modern portfolio website, built on the bleeding edge, to help showcase the services offered by ETCH. Etch Mobility comes with **batteries included**, but you are always welcome to supercharge your setup with modifications and custom components. Etch Mobility is:
+ETCH Mobility is a modern portfolio website, built on the bleeding edge, to help showcase the services offered by ETCH. ETCH Mobility comes with **batteries included**, but you are always welcome to supercharge your setup with modifications and custom components. ETCH Mobility is:
 
 * Free software.
 * Freedom respecting.
-* Community-driven.
+* Community driven.
 
-> Currently, nonfree software is used in parts of the website. The mission of Etch Mobility is to systematically migrate from any nonfree software to free software.
+> Currently, nonfree software is used in parts of the website. The mission of ETCH Mobility is to systematically migrate any nonfree software dependencies to free software.
 
 You can view the published website at <https://etchmobility.com>.
 <!-- FIXME: [TOC] -->
@@ -32,7 +32,7 @@ You can view the published website at <https://etchmobility.com>.
 
 ## 📖 Installation<a name="installation"></a>
 
-Etch Mobility is an open box and transparent. You do not have to guess about the software used in the website or in its construction. Etch Mobility is built and depends on the following software and services.
+ETCH Mobility is an open box and transparent. You do not have to guess about the software used in the website or in its construction. ETCH Mobility is built and depends on the following software and services.
 
 * [Python](https://www.python.org/psf/)
 * [Django](https://www.djangoproject.com/foundation/)
@@ -45,7 +45,7 @@ Etch Mobility is an open box and transparent. You do not have to guess about the
 
 The guiding philosophy of the project is that open source and [free solutions](http://www.gnu.org/philosophy/free-sw.html) are the best.
 
-Developing Etch Mobility requires installing the following tools:
+Developing ETCH Mobility requires installing the following tools:
 
 * [Django](https://docs.djangoproject.com/en/3.1/intro/tutorial01)
 * [Docker](https://docs.docker.com/get-docker/)
@@ -71,7 +71,7 @@ git clone https://github.com/keeganskeate/etch.git
 
 ## 🏛️ Architecture<a name="architecture"></a>
 
-Etch Mobility is built with [Python] using the [Django] framework. Etch Mobility runs on [Cloud Run] and is hosted with [Firebase Hosting]. Etch Mobility utilizes [Firebase Authentication], an optional SQL database, a [Firestore] NoSQL database for real-time data management, and [Firebase Storage] for file storage. You are free to swap out components for others. Etch Mobility depends on several other Google Cloud services in the following ways:
+ETCH Mobility is built with [Python] using the [Django] framework. ETCH Mobility runs on [Cloud Run] and is hosted with [Firebase Hosting]. ETCH Mobility utilizes [Firebase Authentication], an optional SQL database, a [Firestore] NoSQL database for real-time data management, and [Firebase Storage] for file storage. You are free to swap out components for others. ETCH Mobility depends on several other Google Cloud services in the following ways:
 
   * Containerized using [Cloud Build].
   * Uploaded to [Cloud Registry].
@@ -108,7 +108,7 @@ See [`docs/development.md`](docs/development.md) for a complete development guid
 
 ## 📡 Database<a name="database"></a>
 
-Etch Mobility operates with a NoSQL database, [Firestore](https://firebase.google.com/docs/firestore), by default, however, can be configured with an SQL database.
+ETCH Mobility operates with a NoSQL database, [Firestore](https://firebase.google.com/docs/firestore), by default, however, can be configured with an SQL database.
 
 If you use an SQL database, then you can build the database models with:
 
@@ -158,7 +158,7 @@ python manage.py test etch_mobility
 
 ```
 
-Etch Mobility can be built locally for testing with:
+ETCH Mobility can be built locally for testing with:
 
 ```shell
 
@@ -224,7 +224,7 @@ This step provides access to this containerized app from a [Firebase Hosting](ht
 
 ```shell
 
-firebase deploy --only hosting:production
+firebase deploy --project etch-mobility
 
 ```
 
@@ -237,8 +237,8 @@ Below is a non-exhaustive list of helpful resources:
 
 * [Django Philosophy](https://docs.djangoproject.com/en/3.1/misc/design-philosophies)
 * [**Django on Cloud Run**](https://codelabs.developers.google.com/codelabs/cloud-run-django)
-* [django-livereload](https://github.com/Fantomas42/django-livereload)
 * [**django-livereload-server**](https://github.com/tjwalch/django-livereload-server)
+* [django-livereload](https://github.com/Fantomas42/django-livereload)
 * [Django Browser Sync with Docker](https://stackoverflow.com/questions/49482710/using-browser-sync-with-django-on-docker-compose)
 * [Design Tips](https://dribbble.com/stories/2020/04/22/designing-for-conversions-7-ux-tips-ecommerce?utm_campaign=2020-05-05&utm_medium=email&utm_source=courtside-20200505)
 * [Docker Tips](https://twg.io/blog/things-i-wish-i-knew-about-docker-before-i-started-using-it/)
@@ -254,7 +254,7 @@ Below is a non-exhaustive list of helpful resources:
 
 Contributions are always welcome! You are encouraged to submit issues, functionality, and features that you want to be addressed. See [`docs/contributing.md`](docs/contributing.md) to get started.
 
-Anyone is welcome to contribute anything. Currently, Etch Mobility would love:
+Anyone is welcome to contribute anything. Currently, ETCH Mobility would love:
 
 * Art.
 * More code.
