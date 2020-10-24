@@ -1,6 +1,8 @@
 # ETCH
 
-Energy, transportation, community, and heritage (ETCH) planning for a sustainable future.
+<h1 style="text-align:center"><img style="text-align:center" height="300" alt="ETCH Mobility" src="https://etchmobility.com/static/etch_mobility/images/logos/etch_mobility_logo.png"></h1>
+
+*Energy, transportation, community, and heritage (ETCH) planning for a sustainable future*.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -28,7 +30,7 @@ You can view the published website at <https://etchmobility.com>.
 * [Contributing](#contributing)
 * [License](#license)
 
-## 📖 Installation
+## 📖 Installation<a name="installation"></a>
 
 Etch Mobility is an open box and transparent. You do not have to guess about the software used in the website or in its construction. Etch Mobility is built and depends on the following software and services.
 
@@ -67,7 +69,7 @@ git clone https://github.com/keeganskeate/etch.git
 ```
 
 
-## 🏛️ Architecture
+## 🏛️ Architecture<a name="architecture"></a>
 
 Etch Mobility is built with [Python] using the [Django] framework. Etch Mobility runs on [Cloud Run] and is hosted with [Firebase Hosting]. Etch Mobility utilizes [Firebase Authentication], an optional SQL database, a [Firestore] NoSQL database for real-time data management, and [Firebase Storage] for file storage. You are free to swap out components for others. Etch Mobility depends on several other Google Cloud services in the following ways:
 
@@ -99,12 +101,12 @@ Helpful resources:
   [Python]: https://www.python.org/
 
 
-## 🔨 Development
+## 🔨 Development<a name="development"></a>
 
 See [`docs/development.md`](docs/development.md) for a complete development guide. Development can happen in many avenues. Principally, clone the repository, begin working on an area, referring to documentation as needed, and commit your changes.
 
 
-## 📡 Database
+## 📡 Database<a name="database"></a>
 
 Etch Mobility operates with a NoSQL database, [Firestore](https://firebase.google.com/docs/firestore), by default, however, can be configured with an SQL database.
 
@@ -122,7 +124,7 @@ Helpful resources:
 * [Django Database API](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
 
 
-## 📁 Storage
+## 📁 Storage<a name="storage"></a>
 
 You can gather all supporting files into the `static` folder with:
 
@@ -141,12 +143,12 @@ Helpful resources:
 * [Serving static files on App Engine](https://cloud.google.com/appengine/docs/standard/python3/serving-static-files)
 
 
-## 🐞 Bugs
+## 🐞 Bugs<a name="bugs"></a>
 
 See [`docs/bugs.md`](docs/bugs.md) for a full list of bugs and issues that you may encounter. To report a bug, please email <keeganskeate@gmail.com>.
 
 
-## ⚗️ Testing
+## ⚗️ Testing<a name="testing"></a>
 
 Please see [`docs/development.md`](docs/development.md) for full documentation on testing the website. Generally, you can run tests with:
 
@@ -167,7 +169,7 @@ docker push gcr.io/${PROJECT_ID}/${APP_ID}
 ```
 
 
-## 📚 Publishing
+## 📚 Publishing<a name="publishing"></a>
 
 Publishing is done with one command:
 
@@ -194,7 +196,7 @@ firebase login
 ```
 
 
-### Build process
+### Build process<a name="build-process"></a>
 
 The publishing build process contains three steps:
 
@@ -229,7 +231,7 @@ firebase deploy --only hosting:production
 See [`docs/publishing.md`](docs/publishing.md) for an in-depth publishing guide.
 
 
-## 🐕‍🦺 Helpful resources
+## 🐕‍🦺 Helpful resources<a name="helpful-resources"></a>
 
 Below is a non-exhaustive list of helpful resources:
 
@@ -248,7 +250,7 @@ Below is a non-exhaustive list of helpful resources:
 * [VS Code Django Guide](https://code.visualstudio.com/docs/python/tutorial-django)
 
 
-## 🤝 Contributing
+## 🤝 Contributing<a name="contributing"></a>
 
 Contributions are always welcome! You are encouraged to submit issues, functionality, and features that you want to be addressed. See [`docs/contributing.md`](docs/contributing.md) to get started.
 
@@ -260,7 +262,7 @@ Anyone is welcome to contribute anything. Currently, Etch Mobility would love:
 * Ideas.
 
 
-## 📜 License
+## 📜 License<a name="license"></a>
 
 Made with 💖 by Keegan Skeate.
 
